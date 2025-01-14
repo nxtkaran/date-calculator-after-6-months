@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Calculator After 6 Months</title>
+  <meta name="description" content="Use our Date Calculator After 6 Months tool to easily find the date exactly 6 months after any selected date" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- Moment.js for date manipulation (optional, but makes it easier) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+  <style>
+    body {
+      padding-top: 50px;
+    }
+    .container {
+      max-width: 600px;
+      margin-top: 30px;
+    }
+    h1{
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1 class="text-center">Date Calculator After 6 Months</h1>
+
+    <div class="form-group">
+      <label for="inputDate">Select a Date:</label>
+      <input type="date" id="inputDate" class="form-control" placeholder="Enter Date">
+    </div>
+
+    <button id="calculateBtn" class="btn btn-primary btn-block">Calculate 6 Months Later</button>
+
+    <div class="result mt-4">
+      <h4>Result:</h4>
+      <p id="resultDate" class="lead">No date selected yet.</p>
+    </div>
+  </div>
+
+  <!-- Bootstrap and Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // Event listener for the button
+      $('#calculateBtn').click(function () {
+        const inputDate = $('#inputDate').val();
+
+        if (inputDate) {
+          // Using Moment.js to add 6 months
+          const dateAfterSixMonths = moment(inputDate).add(6, 'months').format('YYYY-MM-DD');
+
+          // Display the result
+          $('#resultDate').text('The date 6 months later is: ' + dateAfterSixMonths);
+        } else {
+          $('#resultDate').text('Please select a valid date.');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
